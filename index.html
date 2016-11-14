@@ -12,12 +12,45 @@
 				onLoad: function () {
 					this.canvas = document.getElementById('draw');
 					this.context = this.canvas.getContext('2d');
+
+					var deviceWidth = window.innerWidth;
+					var deviceHeight = window.innerHeight;
+
+					this.canvas.width = deviceWidth;
+					this.canvas.height = deviceHeight;
+
 					this.renderTestFrame();
 				}, 
 
 				renderTestFrame: function(){
 
-					this.context.strokeRect(40,40,40,40);
+					// Draw vehicle profile
+					
+					this.context.strokeRect(40,40,400, 600);
+
+					// draw vehicle header
+					this.context.font = "20px Arial";
+					this.context.fillText("Vehicle Header", 40, 30);
+
+
+					//inside box style
+					this.context.font = "18px Arial";
+
+					// draw armor box
+
+					this.context.strokeRect(45, 80, 390, 200);
+					this.context.fillText("Armor", 45, 70);
+
+					// draw structure box
+
+					this.context.strokeRect(45, 310, 390, 150);
+					this.context.fillText("Structure", 45, 300);
+
+					// draw frame box
+
+					this.context.strokeRect(45, 500, 390, 100);
+					this.context.fillText("Frame", 45, 485);
+
 
 				},
 
@@ -28,6 +61,6 @@
 
 	</head>
 	<body onload="SWN.onLoad()">
-		<canvas id="draw" content="width=device-width, initial-scale=1"></canvas>
+		<canvas id="draw"></canvas>
 	</body>
 </html>
