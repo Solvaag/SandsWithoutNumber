@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Sands Without Number</title>
+		<script type="text/javascript">
+
+			var SWN = {
+				canvas: null,
+				context: null,
+				data: null,
+
+				onLoad: function () {
+					this.canvas = document.getElementById('draw');
+					this.context = this.canvas.getContext('2d');
+					this.renderTestFrame();
+				}, 
+
+				renderTestFrame: function(){
+
+					this.context.strokeRect(40,40,40,40);
+
+				},
+
+
+			};
+
+		</script>
+
+	</head>
+	<body>
+		<canvas id="draw" content="width=device-width, initial-scale=1"></canvas>
+	</body>
+</html>
